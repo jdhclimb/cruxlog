@@ -1,26 +1,7 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDz3_gE45kQ28hDJK0Mm7xPHzmZH3d6_A8",
-//   authDomain: "cruxlog-f7b36.firebaseapp.com",
-//   projectId: "cruxlog-f7b36",
-//   storageBucket: "cruxlog-f7b36.firebasestorage.app",
-//   messagingSenderId: "525760840846",
-//   appId: "1:525760840846:web:302bbba27c6d9e85abb5df",
-//   measurementId: "G-3K3646KJRW"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-
 import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -31,4 +12,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+// // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
